@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ClearBride — Wedding Planning Made Clear</title>
-  <meta name="description" content="Wedding planning made clear. Built by a bride, for brides. No ads, no pressure, no overwhelm." />
+  <title>ClearBride — AI Wedding Planner</title>
+  <meta name="description" content="The AI wedding planner. Build your wedding website, invitations, timeline, budget, and guest list — all in one place. No ads. No vendor deals. Built by a bride." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;1,300;1,400&family=Dancing+Script:wght@500;600;700&family=Nunito:wght@300;400&display=swap" rel="stylesheet">
   <style>
@@ -40,7 +40,6 @@
     .btn-ghost{font-family:'Dancing Script',cursive;font-size:18px;font-weight:600;color:var(--storm);text-decoration:none;border-bottom:1px solid var(--stone);padding-bottom:2px;transition:all 0.2s;}
     .btn-ghost:hover{color:var(--gold);border-color:var(--gold);}
     .hero-right{position:relative;overflow:hidden;opacity:0;animation:fadeIn 1.4s ease forwards 0.5s;}
-
     .photo-full{width:100%;height:100%;min-height:400px;object-fit:cover;display:block;}
     .photo-placeholder{width:100%;height:100%;min-height:400px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:linear-gradient(160deg,#2A3C48 0%,#1E2E38 50%,#121C22 100%);}
     .photo-placeholder::after{content:attr(data-label);font-family:'Dancing Script',cursive;font-size:14px;font-weight:500;color:rgba(255,255,255,0.2);position:relative;z-index:1;}
@@ -100,6 +99,32 @@
     .promise-item h4{font-family:'Playfair Display',serif;font-size:16px;font-weight:300;color:var(--mountain);margin-bottom:4px;}
     .promise-item p{font-size:13px;font-weight:300;color:var(--muted);line-height:1.85;}
 
+    /* Pricing section — NEW */
+    .pricing-section{padding:100px 64px;background:var(--parchment);border-top:1px solid var(--stone);}
+    .pricing-inner{max-width:900px;margin:0 auto;text-align:center;}
+    .pricing-inner h2{font-family:'Playfair Display',serif;font-size:clamp(28px,3.2vw,46px);font-weight:300;line-height:1.2;margin-bottom:12px;}
+    .pricing-inner h2 em{font-style:italic;color:var(--gold);}
+    .pricing-inner .sub{font-size:15px;font-weight:300;color:var(--muted);margin-bottom:52px;line-height:1.8;}
+    .pricing-cards{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:680px;margin:0 auto 40px;}
+    .price-card{background:white;border:1px solid var(--stone);border-radius:16px;padding:36px 32px;text-align:left;position:relative;}
+    .price-card.featured{background:var(--mountain);border-color:var(--mountain);}
+    .price-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--mountain);font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:4px 14px;border-radius:20px;white-space:nowrap;}
+    .price-label{font-family:'Dancing Script',cursive;font-size:16px;font-weight:600;color:var(--gold);margin-bottom:10px;}
+    .price-card.featured .price-label{color:rgba(201,168,76,0.8);}
+    .price-amount{font-family:'Playfair Display',serif;font-size:42px;font-weight:300;color:var(--ink);line-height:1;margin-bottom:4px;}
+    .price-card.featured .price-amount{color:white;}
+    .price-period{font-size:13px;font-weight:300;color:var(--muted);margin-bottom:20px;}
+    .price-card.featured .price-period{color:rgba(255,255,255,0.45);}
+    .price-features{list-style:none;margin-bottom:28px;}
+    .price-features li{font-size:13px;font-weight:300;color:var(--muted);padding:7px 0;border-bottom:1px solid var(--stone);display:flex;align-items:center;gap:8px;}
+    .price-card.featured .price-features li{color:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.1);}
+    .price-features li::before{content:'✓';color:var(--teal-deep);font-weight:600;font-size:12px;flex-shrink:0;}
+    .price-card.featured .price-features li::before{color:var(--gold);}
+    .price-cta{display:block;text-align:center;padding:13px;border-radius:6px;font-size:11px;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;background:var(--mountain);color:white;transition:all 0.2s;}
+    .price-card.featured .price-cta{background:var(--gold);color:var(--mountain);}
+    .price-cta:hover{opacity:0.85;transform:translateY(-1px);}
+    .pricing-note{font-size:12px;font-weight:300;color:var(--fog);letter-spacing:0.06em;}
+
     .journal-section{padding:100px 64px;background:var(--linen);border-top:1px solid var(--stone);}
     .journal-inner{max-width:1100px;margin:0 auto;}
     .journal-header{margin-bottom:48px;}
@@ -125,7 +150,7 @@
     .questions-title em{font-style:italic;color:var(--teal);}
     .questions-body{font-size:14px;font-weight:300;color:rgba(255,255,255,0.45);line-height:1.9;margin-bottom:28px;}
     .questions-email{display:inline-block;font-family:'Dancing Script',cursive;font-size:20px;font-weight:700;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.4);padding-bottom:2px;transition:all 0.2s;}
-    .questions-email:hover{color:var(--gold-soft);border-color:var(--gold-soft);}
+    .questions-email:hover{color:var(--gold-soft);}
 
     .final-cta{padding:120px 64px;text-align:center;background:linear-gradient(160deg,var(--mountain) 0%,var(--slate) 50%,#0D1820 100%);position:relative;overflow:hidden;}
     .final-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 25% 50%,rgba(91,191,181,0.07) 0%,transparent 55%),radial-gradient(ellipse at 75% 50%,rgba(201,168,76,0.05) 0%,transparent 55%);pointer-events:none;}
@@ -148,137 +173,109 @@
     .footer-logo span{color:var(--gold);}
     .social-links{display:flex;gap:10px;flex-wrap:wrap;}
     .social-link{display:flex;align-items:center;gap:7px;padding:9px 18px;border-radius:2px;border:1px solid rgba(255,255,255,0.08);font-size:11px;font-weight:300;letter-spacing:0.08em;color:rgba(255,255,255,0.4);text-decoration:none;transition:all 0.2s;}
-    .social-link:hover{border-color:var(--gold-soft);color:var(--gold-soft);}
+    .social-link:hover{border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.7);}
     .footer-links{display:flex;gap:24px;flex-wrap:wrap;}
-    .footer-links a{font-size:11px;font-weight:300;color:rgba(255,255,255,0.22);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;}
-    .footer-links a:hover{color:var(--gold);}
-    .footer-copy{width:100%;font-size:11px;font-weight:300;color:rgba(255,255,255,0.12);text-align:center;padding-top:20px;border-top:1px solid rgba(255,255,255,0.04);}
+    .footer-links a{font-size:11px;font-weight:300;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.25);text-decoration:none;transition:color 0.2s;}
+    .footer-links a:hover{color:rgba(255,255,255,0.5);}
+    .footer-copy{font-size:11px;font-weight:300;color:rgba(255,255,255,0.15);letter-spacing:0.08em;width:100%;}
 
-    .journey-page{display:none;position:fixed;inset:0;z-index:500;background:var(--cloud);overflow-y:auto;padding:80px 64px;}
-    .journey-page.open{display:block;}
-    .journey-close{position:fixed;top:24px;right:40px;font-family:'Dancing Script',cursive;font-size:18px;font-weight:700;color:var(--mountain);background:none;border:none;cursor:pointer;z-index:600;transition:color 0.2s;}
-    .journey-close:hover{color:var(--gold);}
-    .journey-inner{max-width:720px;margin:0 auto;}
-    .journey-inner h1{font-family:'Playfair Display',serif;font-size:clamp(34px,4vw,56px);font-weight:300;line-height:1.15;margin-bottom:32px;}
+    .journey-page{position:fixed;inset:0;background:var(--cloud);z-index:500;overflow-y:auto;transform:translateY(100%);transition:transform 0.5s cubic-bezier(0.32,0,0.67,0);}
+    .journey-page.open{transform:translateY(0);}
+    .journey-close{position:fixed;top:24px;right:32px;background:none;border:none;font-size:13px;letter-spacing:0.1em;color:var(--muted);cursor:pointer;z-index:501;}
+    .journey-inner{max-width:680px;margin:0 auto;padding:100px 40px 80px;}
+    .journey-inner h1{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,52px);font-weight:300;line-height:1.15;color:var(--ink);margin-bottom:40px;}
     .journey-inner h1 em{font-style:italic;color:var(--gold);}
-    .journey-inner .lead{font-family:'Dancing Script',cursive;font-size:22px;font-weight:600;color:var(--mountain);line-height:1.7;margin-bottom:32px;padding-left:20px;border-left:2px solid var(--gold);}
-    .journey-inner p{font-size:16px;font-weight:300;color:var(--muted);line-height:2.15;margin-bottom:24px;}
+    .journey-photo{margin-bottom:40px;}
+    .journey-inner .lead{font-family:'Dancing Script',cursive;font-size:20px;font-weight:600;color:var(--mountain);line-height:1.7;margin-bottom:28px;padding-left:20px;border-left:2px solid var(--gold);}
+    .journey-inner p{font-size:15px;font-weight:300;color:var(--muted);line-height:2.1;margin-bottom:20px;}
     .journey-inner p strong{color:var(--mountain);font-weight:400;}
-    .journey-photo{width:100%;height:360px;border-radius:16px;overflow:hidden;margin-bottom:40px;}
-    .journey-photo .photo-placeholder{min-height:360px;background:linear-gradient(160deg,#3A5E40 0%,#1E2E28 100%);}
 
-    @keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
-    @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
-    .reveal{opacity:1;transform:translateY(0);transition:opacity 1s ease,transform 1s ease;}
-    .reveal.will-animate{opacity:0;transform:translateY(24px);}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease;}
     .reveal.visible{opacity:1;transform:translateY(0);}
 
-    @media(max-width:960px){
-      nav{padding:16px 24px;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+    @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+
+    @media(max-width:768px){
+      nav{padding:16px 20px;}
       .nav-links{display:none;}
-      .hero{grid-template-columns:1fr;}
-      .hero-left{padding:110px 24px 60px;}
-      .hero-right{min-height:280px;}
-      .feel-section,.story-section,.features-section,.promise-section,.journal-section{padding:80px 24px;}
-      .feel-grid{grid-template-columns:1fr;}
-      .feel-card{padding:24px 20px;text-align:center;}
-      .feel-icon{font-size:28px;margin-bottom:10px;display:block;}
-      .feel-card h3{font-size:16px;margin-bottom:6px;line-height:1.3;}
-      .feel-card p{font-size:13px;line-height:1.65;}
+      .hero{grid-template-columns:1fr;min-height:auto;}
+      .hero-left{padding:100px 24px 60px;}
+      .hero-right{min-height:300px;}
+      .feel-section,.story-section,.features-section,.promise-section,.pricing-section,.journal-section{padding:64px 24px;}
+      .feel-grid{grid-template-columns:1fr 1fr;}
       .story-inner,.promise-inner{grid-template-columns:1fr;gap:40px;}
-      .story-photo-wrap .photo-box{width:100%;margin-left:0;border-radius:16px;height:300px;}
-      .story-photo-wrap .photo-placeholder{min-height:300px;}
+      .story-photo-wrap .photo-box{width:100%;margin-left:0;border-radius:16px;}
       .features-grid{grid-template-columns:1fr;}
+      .pricing-cards{grid-template-columns:1fr;max-width:360px;}
       .journal-grid{grid-template-columns:1fr;}
+      .final-cta{padding:80px 24px;}
+      .bottom-bar{padding:24px 20px;flex-direction:column;align-items:flex-start;}
       .questions-bar{padding:48px 24px;}
-      .final-cta{padding:100px 24px;}
-      .bottom-bar{padding:32px 24px;flex-direction:column;align-items:flex-start;}
-      .journey-page{padding:80px 24px;}
-      .journey-close{right:20px;}
     }
   </style>
 </head>
 <body>
 
 <nav>
-  <a href="#" class="nav-logo">Clear<span>Bride</span></a>
+  <a href="/" class="nav-logo">Clear<span>Bride</span></a>
   <div class="nav-links">
-    <a href="#feel">How You'll Feel</a>
-    <a href="#the-app">The App</a>
+    <a href="#the-app">Features</a>
+    <a href="#pricing">Pricing</a>
     <a href="#journal">Journal</a>
-    <a href="https://clearbride.app" class="nav-app" target="_blank">Begin &rarr;</a>
+    <a href="https://clearbride.app" class="nav-app" target="_blank">Open App ✦</a>
   </div>
 </nav>
 
 <section class="hero">
   <div class="hero-left">
-    <div class="hero-eyebrow">The wedding planning app built without an agenda</div>
+    <div class="hero-eyebrow">The calm in the chaos ✦</div>
     <h1 class="hero-title">
-      Plan your entire wedding<br>in one place.
-      <span class="script-line">No chaos. No agenda. No ads.</span>
+      Your whole wedding.<br>
+      <span class="script-line">One calm place.</span>
     </h1>
     <p class="hero-sub">
-      ClearBride replaces every spreadsheet, browser tab, and notes app with one organized, calm, and completely unbiased planning tool &mdash; built by a bride who was tired of platforms that profit from her decisions.
+      AI-powered wedding planning with no ads, no vendor kickbacks, and no overwhelm. Built by a bride who needed exactly this &mdash; and couldn't find it anywhere.
     </p>
     <div class="hero-actions">
-      <a href="https://clearbride.app" class="btn-primary" target="_blank">Start Planning Free &mdash; 30 Days</a>
-      <a href="#feel" class="btn-ghost">See what's inside &rarr;</a>
+      <a href="https://clearbride.app" class="btn-primary" target="_blank">Start Free &mdash; 30 Days On Us</a>
+      <a href="#" class="btn-ghost" onclick="openJourney();return false;">Our story &rarr;</a>
     </div>
   </div>
   <div class="hero-right">
-    <div class="photo-placeholder" data-label="Add your hero photo here"></div>
+    <div class="photo-placeholder" data-label="Add hero photo here"></div>
   </div>
 </section>
 
-<section class="feel-section" id="feel">
-  <div class="feel-inner reveal">
-    <h2 class="feel-title">You said yes. Then the internet handed you <em>a thousand opinions and zero clarity.</em></h2>
-    <p class="feel-intro">You have a vision. You have a budget &mdash; or something close to one. What you don't have is a clear, trustworthy place to bring it all together. That's not a planning problem. That's a tools problem. ClearBride is the fix.</p>
+<section class="feel-section">
+  <div class="feel-inner">
+    <h2 class="feel-title">Wedding planning should feel <em>like this.</em></h2>
+    <p class="feel-intro">Not like managing a second job. Not like drowning in tabs. Like something you are genuinely in control of.</p>
     <div class="feel-grid">
-      <div class="feel-card">
-        <span class="feel-icon">&#127807;</span>
-        <h3>Six browser tabs. One solution.</h3>
-        <p>Budget, guests, vendors, tasks, timeline &mdash; all connected in one place. Close the tabs. Stop the duplication.</p>
-      </div>
-      <div class="feel-card">
-        <span class="feel-icon">&#128155;</span>
-        <h3>Nobody asks how you're doing</h3>
-        <p>ClearBride does. A 30-second check-in built into your day &mdash; because you're a person, not a project manager.</p>
-      </div>
-      <div class="feel-card">
-        <span class="feel-icon">&#127787;&#65039;</span>
-        <h3>Nothing gets missed</h3>
-        <p>100+ pre-built tasks in the right order so no deadline ever sneaks up on you.</p>
-      </div>
-      <div class="feel-card">
-        <span class="feel-icon">&#128141;</span>
-        <h3>Their recommendations are paid for</h3>
-        <p>Ours aren't. No sponsored vendors, no affiliate deals. What you see is what's right for your wedding.</p>
-      </div>
+      <div class="feel-card"><span class="feel-icon">✦</span><h3>Clear, not chaotic</h3><p>Every task, vendor, guest, and decision in one place. Nothing falls through the cracks.</p></div>
+      <div class="feel-card"><span class="feel-icon">🤍</span><h3>Trusted, not sold to</h3><p>No paid rankings. No vendor kickbacks. Every recommendation is based on your wedding, not someone's revenue.</p></div>
+      <div class="feel-card"><span class="feel-icon">✨</span><h3>AI that actually helps</h3><p>Scans your contracts. Writes your vows. Discovers vendors. Builds your website. Real tools, not gimmicks.</p></div>
+      <div class="feel-card"><span class="feel-icon">🌿</span><h3>Calm, not anxious</h3><p>Built-in check-ins, a Calm Mode for hard days, and a partner sync so you're never doing this alone.</p></div>
     </div>
   </div>
 </section>
 
-<section class="story-section" id="story">
-  <div class="story-inner reveal">
-    <div class="story-photo-wrap">
-      <div class="photo-box">
-        <div class="photo-placeholder" data-label="Your photo here"></div>
-      </div>
-      <p class="photo-caption">Brittany &mdash; Founder, Bride, Builder</p>
+<section class="story-section">
+  <div class="story-inner">
+    <div class="story-photo-wrap reveal">
+      <div class="photo-box"><div class="photo-placeholder" data-label="Add your photo here"></div></div>
+      <p class="photo-caption">Brittany &mdash; founder, bride, still figuring it out.</p>
     </div>
-    <div class="story-text">
-      <h2>I built the tool<br><em>I couldn't find anywhere else.</em></h2>
-      <p class="lead">
-        "I got engaged at 33 with a vision I'd been carrying since I was a teenager, a calendar that was already completely full, and absolutely zero tolerance for tools that weren't actually on my side."
-      </p>
+    <div class="story-text reveal">
+      <h2>Built in the middle of<br><em>my own planning.</em></h2>
+      <p class="lead">"I needed something on my side. Everything I found was built for the market &mdash; not for me."</p>
       <p>
-        I'm Brittany &mdash; a small-town girl from West Tennessee, currently planning a dream wedding in Colorado while managing a full career, a nonprofit board, and a border collie who doesn't understand deadlines. I built ClearBride in the middle of my own planning season because what I needed didn't exist: something that handled the logistics <em>and</em> cared about how I was feeling while doing it.
+        I'm Brittany &mdash; a small-town girl from West Tennessee, currently planning a dream wedding in Colorado while managing a full career, a nonprofit board, and a border collie who doesn't understand deadlines. I built ClearBride in the middle of my own planning season because what I needed didn't exist.
       </p>
       <p>
         Every feature in ClearBride exists because I hit that exact problem during my own planning. I'm still using it, still updating it, still figuring it out right alongside you. <strong>This isn't a company that guessed what brides need. It's built by one who knows.</strong>
       </p>
-      <a href="#" class="journey-link" onclick="openJourney();return false;">Read my full journey &rarr;</a>
+      <a href="#" class="journey-link" onclick="openJourney();return false;">Read my full story &rarr;</a>
     </div>
   </div>
 </section>
@@ -288,18 +285,18 @@
     <div class="features-header reveal">
       <div class="section-script">Every tool. Every problem. Solved.</div>
       <h2>What ClearBride<br><em>actually solves.</em></h2>
-      <p>Each feature was built around a specific pain point &mdash; not a feature checklist. Here's the problem it fixes and the outcome you get.</p>
+      <p>Each feature was built around a specific pain point &mdash; not a feature checklist.</p>
     </div>
     <div class="features-grid reveal">
       <div class="feature-item"><div class="feature-num">one</div><div class="feature-name">Budget Tracker</div><div class="feature-desc"><strong style="color:var(--mountain);font-weight:400;">Problem:</strong> Most brides hit their limit before the wedding &mdash; because nothing was tracking it in real time.<br><br>AI scans vendor contracts and fills in amounts automatically. You always know exactly where you stand.</div></div>
       <div class="feature-item"><div class="feature-num">two</div><div class="feature-name">Guest List &amp; Seating</div><div class="feature-desc"><strong style="color:var(--mountain);font-weight:400;">Problem:</strong> RSVPs are spread across texts, emails, and a spreadsheet nobody can find.<br><br>One place for every guest, meal choice, and table assignment. Export a floor plan your venue can use.</div></div>
       <div class="feature-item"><div class="feature-num">three</div><div class="feature-name">Timeline &amp; Tasks</div><div class="feature-desc"><strong style="color:var(--mountain);font-weight:400;">Problem:</strong> You don't know what you don't know &mdash; until you've missed the deadline.<br><br>100+ pre-built tasks in the right order, from 12 months out to the morning of your wedding.</div></div>
-      <div class="feature-item"><div class="feature-num">four</div><div class="feature-name">Calm Check-ins</div><div class="feature-desc"><strong style="color:var(--mountain);font-weight:400;">Problem:</strong> Everyone asks about the wedding. Nobody asks how you're doing.<br><br>A 30-second check-in built into your day. Not therapy &mdash; just a quiet moment in a loud process.</div></div>
+      <div class="feature-item"><div class="feature-num">four</div><div class="feature-name">Calm Mode</div><div class="feature-desc"><strong style="color:var(--mountain);font-weight:400;">Problem:</strong> Everyone asks about the wedding. Nobody asks how you're doing.<br><br>A built-in check-in for hard days. Not therapy &mdash; just a quiet moment in a loud process.</div></div>
       <div class="feature-item"><div class="feature-num">five</div><div class="feature-name">AI Vow Writer</div><div class="feature-desc"><strong style="color:var(--mountain);font-weight:400;">Problem:</strong> You know how you feel. Writing it without sounding like a greeting card is another thing.<br><br>Answer five questions. Get vows that are specific, emotional, and entirely yours.</div></div>
-      <div class="feature-item"><div class="feature-num">six</div><div class="feature-name">Contract Scanner</div><div class="feature-desc"><strong style="color:var(--mountain);font-weight:400;">Problem:</strong> Vendor contracts are long and full of clauses you won't think about until you need them.<br><br>Upload any PDF. AI extracts dates, payment schedules, and cancellation terms &mdash; and fills your budget.</div></div>
-      <div class="feature-item"><div class="feature-num">seven</div><div class="feature-name">Vendor Tools</div><div class="feature-desc"><strong style="color:var(--mountain);font-weight:400;">Problem:</strong> Most wedding platforms are paid by vendors to recommend vendors. That's not advice &mdash; that's advertising.<br><br>Compare side by side. AI recommendations based on your inputs. Zero paid placements.</div></div>
-      <div class="feature-item"><div class="feature-num">eight</div><div class="feature-name">Partner Collaboration</div><div class="feature-desc"><strong style="color:var(--mountain);font-weight:400;">Problem:</strong> One partner is doing all the planning. The other has no idea what's been decided.<br><br>Invite with a code. Both see the same plan in real time. Shared ownership, zero briefings.</div></div>
-      <div class="feature-item"><div class="feature-num">nine</div><div class="feature-name">Day-Of Timeline + Website</div><div class="feature-desc"><strong style="color:var(--mountain);font-weight:400;">Problem:</strong> On wedding day, if no one has a timeline, someone will be late &mdash; probably the photographer.<br><br>Build your full day minute by minute. Share with every vendor. Plus a guest-facing wedding website in one link.</div></div>
+      <div class="feature-item"><div class="feature-num">six</div><div class="feature-name">Contract Scanner</div><div class="feature-desc"><strong style="color:var(--mountain);font-weight:400;">Problem:</strong> Vendor contracts are long and full of clauses you won't notice until you need them.<br><br>Upload any PDF. AI pulls dates, payment schedules, and cancellation terms automatically.</div></div>
+      <div class="feature-item"><div class="feature-num">seven</div><div class="feature-name">Vendor Discovery</div><div class="feature-desc"><strong style="color:var(--mountain);font-weight:400;">Problem:</strong> Most wedding platforms are paid by vendors to recommend vendors. That's advertising, not advice.<br><br>Compare side by side. AI recommendations based on your budget and style. Zero paid placements.</div></div>
+      <div class="feature-item"><div class="feature-num">eight</div><div class="feature-name">Partner Sync</div><div class="feature-desc"><strong style="color:var(--mountain);font-weight:400;">Problem:</strong> One partner is doing all the planning. The other has no idea what's been decided.<br><br>Invite with one link. Both see the same plan in real time. Partner access is always free.</div></div>
+      <div class="feature-item"><div class="feature-num">nine</div><div class="feature-name">Wedding Website</div><div class="feature-desc"><strong style="color:var(--mountain);font-weight:400;">Problem:</strong> Building a wedding website takes hours and costs extra on every other platform.<br><br>AI generates yours from a photo or description. Published at your own link. RSVP built in.</div></div>
     </div>
   </div>
 </section>
@@ -308,15 +305,54 @@
   <div class="promise-inner">
     <div class="promise-left reveal">
       <h2>Most wedding apps get paid<br>when you book vendors.<br><em>ClearBride doesn't.</em></h2>
-      <p>The biggest wedding platforms are advertising businesses built around your decisions. When they recommend a vendor, there is a payment happening somewhere in that transaction. Your choices are being quietly shaped by a revenue model you never agreed to.</p>
-      <p>ClearBride has no vendor partnerships, no sponsored listings, no affiliate deals, and no advertising of any kind. One transparent fee from you &mdash; that's the entire business relationship. Every result you see is based on what is right for your wedding, full stop.</p>
+      <p>The biggest wedding platforms are advertising businesses built around your decisions. When they recommend a vendor, there is a payment happening somewhere in that transaction.</p>
+      <p>ClearBride has no vendor partnerships, no sponsored listings, no affiliate deals, and no advertising of any kind. One transparent subscription from you &mdash; that's the entire business relationship.</p>
     </div>
     <div class="promise-right reveal">
-      <div class="promise-item"><div class="p-icon">&#10022;</div><div><h4>We get paid by you. Not your vendors.</h4><p>One fee. No advertising. No sponsorships. The only business model that puts your interests first.</p></div></div>
-      <div class="promise-item"><div class="p-icon">&#10022;</div><div><h4>Everything connected. Nothing missed.</h4><p>Budget, vendors, tasks, and timeline all talk to each other. Change one thing and the rest updates. No duplicate entry, no gaps.</p></div></div>
-      <div class="promise-item"><div class="p-icon">&#10022;</div><div><h4>Built by a bride. Used by a bride.</h4><p>Every feature came from a real planning problem. Still being updated based on real experience &mdash; including the founder's own wedding.</p></div></div>
-      <div class="promise-item"><div class="p-icon">&#10022;</div><div><h4>Your data stays yours. Always.</h4><p>We never sell, share, or monetize your personal information. Your plans are completely private and never used for advertising.</p></div></div>
+      <div class="promise-item"><div class="p-icon">&#10022;</div><div><h4>We get paid by you. Not your vendors.</h4><p>One subscription. No advertising. No sponsorships. The only model that puts your interests first.</p></div></div>
+      <div class="promise-item"><div class="p-icon">&#10022;</div><div><h4>Everything connected. Nothing missed.</h4><p>Budget, vendors, tasks, and timeline all talk to each other. No duplicate entry, no gaps.</p></div></div>
+      <div class="promise-item"><div class="p-icon">&#10022;</div><div><h4>Built by a bride. Used by a bride.</h4><p>Every feature came from a real planning problem. Still being updated based on real experience.</p></div></div>
+      <div class="promise-item"><div class="p-icon">&#10022;</div><div><h4>Your data stays yours. Always.</h4><p>We never sell, share, or monetize your personal information. Your plans are completely private.</p></div></div>
     </div>
+  </div>
+</section>
+
+<!-- PRICING SECTION — NEW -->
+<section class="pricing-section" id="pricing">
+  <div class="pricing-inner">
+    <div class="section-script reveal">Simple, honest pricing</div>
+    <h2 class="reveal">Try free for 30 days.<br><em>No credit card needed.</em></h2>
+    <p class="sub reveal">Full access to every feature from day one. Cancel anytime. Your data is always yours.</p>
+    <div class="pricing-cards reveal">
+      <div class="price-card">
+        <div class="price-label">Monthly</div>
+        <div class="price-amount">$9.99</div>
+        <div class="price-period">per month &middot; cancel anytime</div>
+        <ul class="price-features">
+          <li>All AI features included</li>
+          <li>Unlimited guests &amp; vendors</li>
+          <li>Wedding website published</li>
+          <li>Partner access free</li>
+          <li>Cancel anytime</li>
+        </ul>
+        <a href="https://clearbride.app" class="price-cta" target="_blank">Start free trial</a>
+      </div>
+      <div class="price-card featured">
+        <div class="price-badge">Best value</div>
+        <div class="price-label">Annual</div>
+        <div class="price-amount" style="color:white;">$79</div>
+        <div class="price-period">per year &middot; ~$6.58/month</div>
+        <ul class="price-features">
+          <li>Everything in monthly</li>
+          <li>Save $40 vs monthly</li>
+          <li>One payment, full year</li>
+          <li>Priority support</li>
+          <li>Best for active planners</li>
+        </ul>
+        <a href="https://clearbride.app" class="price-cta" target="_blank">Start free trial</a>
+      </div>
+    </div>
+    <p class="pricing-note reveal">30-day free trial &middot; No credit card required &middot; Cancel anytime &middot; No ads &middot; No vendor deals</p>
   </div>
 </section>
 
@@ -354,13 +390,13 @@
   <div class="cta-ring ring-1"></div>
   <div class="cta-ring ring-2"></div>
   <h2>You have a wedding to plan.</h2>
-  <span class="cta-script">Get organized today.</span>
+  <span class="cta-script">Start today. No pressure.</span>
   <div class="pricing-block">
-    <div class="pricing-main">30 days free &nbsp;&middot;&nbsp; then <em>$24.99</em> once &nbsp;&middot;&nbsp; yours forever.</div>
-    <div class="pricing-sub">No subscription. No renewals. No hidden fees. One payment, lifetime access.</div>
+    <div class="pricing-main">30 days free &nbsp;&middot;&nbsp; then <em>$9.99</em>/month &nbsp;&middot;&nbsp; or <em>$79</em>/year</div>
+    <div class="pricing-sub">No credit card needed &middot; Cancel anytime &middot; No ads &middot; No vendor deals</div>
   </div>
   <a href="https://clearbride.app" class="btn-primary" target="_blank">Start Planning Free &mdash; No Credit Card Required</a>
-  <div class="final-cta-sub">Web &middot; Android &middot; iOS coming soon &nbsp;&middot;&nbsp; No ads &middot; No vendor deals &middot; Built by a bride</div>
+  <div class="final-cta-sub">Web &middot; Android &middot; iOS &nbsp;&middot;&nbsp; No ads &middot; No vendor deals &middot; Built by a bride</div>
 </section>
 
 <div class="questions-bar">
@@ -368,7 +404,7 @@
     <div class="questions-script">Have questions?</div>
     <p class="questions-title">Message me directly.<br><em>We're in this together.</em></p>
     <p class="questions-body">Have a question about the app, a feature request, or something not working right? I'm a real bride building this in real time and I read every message. Reach out &mdash; this is a real conversation, not a support ticket.</p>
-    <a href="mailto:clearbridehelpdesk@gmail.com" class="questions-email">clearbridehelpdesk@gmail.com &rarr;</a>
+    <a href="mailto:clearbride@gmail.com" class="questions-email">clearbride@gmail.com &rarr;</a>
   </div>
 </div>
 
@@ -392,7 +428,7 @@
     <a href="https://clearbride.app" target="_blank">Open App</a>
     <a href="#journal">Journal</a>
     <a href="https://clearbride.app/#settings">Privacy</a>
-    <a href="mailto:clearbridehelpdesk@gmail.com">Contact</a>
+    <a href="mailto:clearbride@gmail.com">Contact</a>
   </div>
   <div class="footer-copy">&#169; 2026 ClearBride&#8482; &middot; Built in Colorado &middot; by a bride, for brides</div>
 </div>
@@ -408,7 +444,6 @@
     <p>The first reality check was what weddings actually cost &mdash; and the second was everything that comes with planning one. Vendors, timelines, contracts, seating charts, guest lists, tastings, fittings, and a hundred details that all need to live somewhere that isn't three different browser tabs and a notes app at two in the morning.</p>
     <p>I have a wonderful wedding planner &mdash; she is genuinely amazing &mdash; but even with her guidance, everything still ends up in spreadsheet after spreadsheet, and the mental load of keeping it all connected falls squarely on me. I started looking at every app I could find, and what I discovered was that most of them are built to serve the market, not the bride.</p>
     <p>What I was looking for didn't seem to exist: something genuinely on my side, that could hold all the logistics without losing sight of the fact that there is a person behind them who is allowed to be excited, emotional, and completely human about all of this. <strong>So I built it.</strong></p>
-    <p>ClearBride is the tool I built while planning my own wedding &mdash; which means every feature, every calm check-in, every gentle reminder came from a real moment when I needed it too. I'm still using it. Still planning. Still figuring it out right alongside you. That's what "we're in this together" actually means.</p>
     <p style="font-family:'Dancing Script',cursive;font-size:22px;font-weight:600;color:var(--mountain);">&mdash; Brittany &#10022;</p>
   </div>
 </div>
