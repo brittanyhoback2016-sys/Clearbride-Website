@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "index.html",     "use": "@vercel/static" },
+    { "src": "subscribe.html", "use": "@vercel/static" },
+    { "src": "privacy.html",   "use": "@vercel/static" },
+    { "src": "terms.html",     "use": "@vercel/static" },
+    { "src": "support.html",   "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/subscribe", "dest": "/subscribe.html" },
+    { "src": "/privacy",   "dest": "/privacy.html"   },
+    { "src": "/terms",     "dest": "/terms.html"     },
+    { "src": "/support",   "dest": "/support.html"   },
+    { "src": "/(.*)",      "dest": "/index.html"     }
+  ]
+}
