@@ -101,11 +101,14 @@
 
     /* Pricing section — NEW */
     .pricing-section{padding:100px 64px;background:var(--parchment);border-top:1px solid var(--stone);}
-    .pricing-inner{max-width:900px;margin:0 auto;text-align:center;}
+    .pricing-inner{max-width:1040px;margin:0 auto;text-align:center;}
     .pricing-inner h2{font-family:'Playfair Display',serif;font-size:clamp(28px,3.2vw,46px);font-weight:300;line-height:1.2;margin-bottom:12px;}
     .pricing-inner h2 em{font-style:italic;color:var(--gold);}
     .pricing-inner .sub{font-size:15px;font-weight:300;color:var(--muted);margin-bottom:52px;line-height:1.8;}
-    .pricing-cards{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:680px;margin:0 auto 40px;}
+    .pricing-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1000px;margin:0 auto 40px;}
+    @media(max-width:960px){.pricing-cards{grid-template-columns:1fr;max-width:380px;}}
+    .play-badge{display:inline-block;margin-top:4px;}
+    .play-badge img{height:58px;width:auto;display:block;}
     .price-card{background:white;border:1px solid var(--stone);border-radius:16px;padding:36px 32px;text-align:left;position:relative;}
     .price-card.featured{background:var(--mountain);border-color:var(--mountain);}
     .price-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--mountain);font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:4px 14px;border-radius:20px;white-space:nowrap;}
@@ -233,7 +236,7 @@
       AI-powered wedding planning with no ads, no vendor kickbacks, and no overwhelm. Built by a bride who needed exactly this &mdash; and couldn't find it anywhere.
     </p>
     <div class="hero-actions">
-      <a href="https://clearbride.app" class="btn-primary" target="_blank">Start Free &mdash; 30 Days On Us</a>
+      <a href="https://clearbride.app" class="btn-primary" target="_blank">Start Planning Free</a>
       <a href="#" class="btn-ghost" onclick="openJourney();return false;">Our story &rarr;</a>
     </div>
   </div>
@@ -316,38 +319,51 @@
 <section class="pricing-section" id="pricing">
   <div class="pricing-inner">
     <div class="section-script reveal">Simple, honest pricing</div>
-    <h2 class="reveal">Try free for 30 days.<br><em>No card required to start.</em></h2>
-    <p class="sub reveal">Full access to every feature from day one. Cancel anytime. Your data is always yours.</p>
+    <h2 class="reveal">Free forever.<br><em>Premium when you want it.</em></h2>
+    <p class="sub reveal">Plan your whole wedding free. When you're ready, try Premium free for 14 days &mdash; you choose when it starts, no card required. Your data is always yours.</p>
     <div class="pricing-cards reveal">
       <div class="price-card">
-        <div class="price-label">Monthly</div>
+        <div class="price-label">Free</div>
+        <div class="price-amount">$0</div>
+        <div class="price-period">forever &middot; no card needed</div>
+        <ul class="price-features">
+          <li>Guest list, RSVPs &amp; seating</li>
+          <li>Budget, timeline &amp; checklist</li>
+          <li>Wedding website, published</li>
+          <li>Partner sync, free</li>
+          <li>A taste of every AI tool</li>
+        </ul>
+        <a href="https://clearbride.app" class="price-cta" target="_blank">Start free</a>
+      </div>
+      <div class="price-card">
+        <div class="price-label">Premium &middot; Monthly</div>
         <div class="price-amount">$9.99</div>
         <div class="price-period">per month &middot; cancel anytime</div>
         <ul class="price-features">
-          <li>All AI features included</li>
-          <li>Unlimited guests &amp; vendors</li>
-          <li>Wedding website published</li>
+          <li>Everything in Free</li>
+          <li>Unlimited AI: contracts, vendors, vows</li>
+          <li>Plan every event: shower, bachelorette, rehearsal &amp; more</li>
           <li>Partner access free</li>
           <li>Cancel anytime</li>
         </ul>
-        <a href="https://clearbride.app" class="price-cta" target="_blank">Start free trial</a>
+        <a href="https://clearbride.app" class="price-cta" target="_blank">Try Premium free</a>
       </div>
       <div class="price-card featured">
         <div class="price-badge">Best value</div>
-        <div class="price-label">Annual</div>
+        <div class="price-label">Premium &middot; Annual</div>
         <div class="price-amount" style="color:white;">$79</div>
         <div class="price-period">per year &middot; ~$6.58/month</div>
         <ul class="price-features">
-          <li>Everything in monthly</li>
+          <li>Everything in Premium</li>
           <li>Save $40 vs monthly</li>
           <li>One payment, full year</li>
           <li>Priority support</li>
           <li>Best for active planners</li>
         </ul>
-        <a href="https://clearbride.app" class="price-cta" target="_blank">Start free trial</a>
+        <a href="https://clearbride.app" class="price-cta" target="_blank">Try Premium free</a>
       </div>
     </div>
-    <p class="pricing-note reveal">30-day free trial &middot; No credit card for your free trial &middot; Cancel anytime &middot; No ads &middot; No vendor deals</p>
+    <p class="pricing-note reveal">Free forever &middot; 14-day Premium trial, on your terms &middot; No credit card &middot; Cancel anytime &middot; No ads &middot; No vendor deals</p>
   </div>
 </section>
 
@@ -358,15 +374,16 @@
   <h2>You have a wedding to plan.</h2>
   <span class="cta-script">Start today. No pressure.</span>
   <div class="pricing-block">
-    <div class="pricing-main">30 days free &nbsp;&middot;&nbsp; then <em>$9.99</em>/month &nbsp;&middot;&nbsp; or <em>$79</em>/year</div>
-    <div class="pricing-sub">No credit card for your free trial &middot; Cancel anytime &middot; No ads &middot; No vendor deals</div>
+    <div class="pricing-main">Free forever &nbsp;&middot;&nbsp; Premium <em>$9.99</em>/month &nbsp;&middot;&nbsp; or <em>$79</em>/year</div>
+    <div class="pricing-sub">Try Premium free for 14 days &middot; No credit card &middot; Cancel anytime &middot; No ads &middot; No vendor deals</div>
   </div>
-  <a href="https://clearbride.app" class="btn-primary" target="_blank">Start Planning Free &mdash; 30 Days On Us</a>
+  <a href="https://clearbride.app" class="btn-primary" target="_blank">Start Planning Free</a>
   <div class="install-section">
-    <div style="font-size:12px;color:rgba(255,255,255,0.35);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:14px;">Add to your phone now</div>
+    <div style="font-size:12px;color:rgba(255,255,255,0.35);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:14px;">Get ClearBride on any device</div>
     <div class="install-toggle">
       <button class="install-tab active" onclick="showInstall('ios')">📱 iPhone</button>
       <button class="install-tab" onclick="showInstall('android')">🤖 Android</button>
+      <button class="install-tab" onclick="showInstall('desktop')">💻 Desktop</button>
     </div>
     <div id="install-ios" class="install-steps active">
       <div class="install-title">Add to iPhone</div>
@@ -377,15 +394,20 @@
       <div style="margin-top:16px;font-size:11px;color:rgba(255,255,255,0.25);line-height:1.7;">iOS App Store version coming soon ✦</div>
     </div>
     <div id="install-android" class="install-steps">
-      <div class="install-title">Add to Android</div>
-      <div class="install-step"><div class="step-num">1</div><div class="step-text">Open <strong>clearbride.app</strong> in <strong>Chrome</strong></div></div>
-      <div class="install-step"><div class="step-num">2</div><div class="step-text">Tap the <strong>three dots menu</strong> in the top right corner</div></div>
-      <div class="install-step"><div class="step-num">3</div><div class="step-text">Tap <strong>"Add to Home screen"</strong> or <strong>"Install app"</strong></div></div>
-      <div class="install-step"><div class="step-num">4</div><div class="step-text">Tap <strong>Add</strong> — ClearBride will appear on your home screen like any app</div></div>
-      <div style="margin-top:16px;font-size:11px;color:rgba(255,255,255,0.25);line-height:1.7;">Google Play version coming soon ✦</div>
+      <div class="install-title">Now on Google Play</div>
+      <div class="install-step"><div class="step-num">1</div><div class="step-text">Tap the badge below, or search <strong>ClearBride</strong> in the Play Store</div></div>
+      <div class="install-step"><div class="step-num">2</div><div class="step-text">Tap <strong>Install</strong>, then sign in &mdash; your plan syncs instantly</div></div>
+      <a class="play-badge" href="https://play.google.com/store/apps/details?id=app.clearbride.wedding" target="_blank" rel="noopener"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play"></a>
+    </div>
+    <div id="install-desktop" class="install-steps">
+      <div class="install-title">Plan from your computer</div>
+      <div class="install-step"><div class="step-num">1</div><div class="step-text">Open <strong>clearbride.app</strong> in any browser and sign in &mdash; that's it</div></div>
+      <div class="install-step"><div class="step-num">2</div><div class="step-text">Want it in your dock? In <strong>Chrome</strong> or <strong>Edge</strong>, click the <strong>install icon</strong> at the right of the address bar</div></div>
+      <div class="install-step"><div class="step-num">3</div><div class="step-text">On a Mac in <strong>Safari</strong>, choose <strong>File &rarr; Add to Dock</strong></div></div>
+      <div style="margin-top:16px;font-size:11px;color:rgba(255,255,255,0.25);line-height:1.7;">Your phone, your partner's phone and your computer all stay in sync ✦</div>
     </div>
   </div>
-  <div class="final-cta-sub">Web &middot; iOS App Store <em style="opacity:0.6;font-style:italic;">coming soon</em> &middot; Android <em style="opacity:0.6;font-style:italic;">coming soon</em> &nbsp;&middot;&nbsp; No ads &middot; No vendor deals &middot; Built by a bride</div>
+  <div class="final-cta-sub">Web &amp; desktop &middot; <a href="https://play.google.com/store/apps/details?id=app.clearbride.wedding" target="_blank" rel="noopener" style="color:inherit;">Android on Google Play</a> &middot; iOS App Store <em style="opacity:0.6;font-style:italic;">coming soon</em> &nbsp;&middot;&nbsp; No ads &middot; No vendor deals &middot; Built by a bride</div>
 </section>
 
 <div class="questions-bar">
@@ -440,8 +462,7 @@
 <script>
 function openJourney(){document.getElementById('journeyPage').classList.add('open');document.body.style.overflow='hidden';}
 function showInstall(platform) {
-  document.getElementById('install-ios').classList.remove('active');
-  document.getElementById('install-android').classList.remove('active');
+  ['ios','android','desktop'].forEach(function(p){ var el=document.getElementById('install-'+p); if(el) el.classList.remove('active'); });
   document.getElementById('install-' + platform).classList.add('active');
   document.querySelectorAll('.install-tab').forEach(t => t.classList.remove('active'));
   event.target.classList.add('active');
